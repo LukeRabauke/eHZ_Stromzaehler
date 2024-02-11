@@ -1,0 +1,13 @@
+Put the following into your configuration.yaml to calculate the Battery Voltage
+out of the Analog Value.
+For me the Factor is 4.337 (calibrated with a Multimeter).
+
+
+sensor:
+
+  - platform: template
+    sensors:
+      calculated_signal:
+        friendly_name: "eHZ Battery Voltage"
+        unit_of_measurement: "V"  # Replace "Your_Unit" with appropriate unit
+        value_template: "{{ (states('sensor.tasmota_analog_a0') | float / 1023) * 4.337 | round(3) }}" # Adjust the calculation as needed, and round to 3 decimal places
