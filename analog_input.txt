@@ -1,0 +1,10 @@
+Information from:
+https://tasmota.github.io/docs/ADC/#commands
+
+Send via Tasmota Console:
+AdcParam 6, 0, 1023, 0, 4337
+
+4337 is calibrated using a Multimeter for my private setup. Output is in mV.
+Using ESP BatteryShield 1.2 you can use Factor 4.5 (for V) (see https://iotspace.dev/wemos-d1-mini-battery-shield/)
+
+
